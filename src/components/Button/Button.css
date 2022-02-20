@@ -1,6 +1,7 @@
 .button{
   background-color: var(--light-green);
   border: none;
+  color: white;
   border-radius: 4px;
   cursor: pointer;
   transition: all 100ms ease;
@@ -9,5 +10,5 @@
   background-color: var(--dark-green);
 }
 .button:active{
-  transform: scale(.98);
+  transform:  translateY(-50%) scale(.98);
 }

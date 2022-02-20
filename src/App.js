@@ -1,6 +1,6 @@
 import './App.css';
-import Search from './pages/Search';
-import About from './pages/About';
+import Search from './pages/Search/Search';
+import About from './pages/About/About';
 import Header from './components/Header/Header';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 const App = () => {
