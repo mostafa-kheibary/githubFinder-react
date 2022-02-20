@@ -5,6 +5,8 @@
   font-family: 'Poppins', sans-serif;
 }
 body{
+  max-width: 1980px;
+  margin: 0 auto;
   background-color: var(--dark-background);
 }
 input{
