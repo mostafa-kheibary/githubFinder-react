@@ -16,10 +16,12 @@
   display: flex;
   gap: 20px;
 }
-.about-social__icon {
-  font-size: 25px;
+.about-social__link {
   text-decoration: none;
   color: white;
+}
+.about-social__icon {
+  font-size: 25px;
 }
 .about-button-page button {
   margin-top: 15px;

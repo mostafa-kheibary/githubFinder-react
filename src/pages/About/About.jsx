@@ -18,14 +18,12 @@ const About = () => {
         molestie. Tortor quis sed senectus scelerisque neque
       </p>
       <div className='about-social'>
-        <a
-          href='https://linkedin.com/in/mostafa-kheibary'
-          className='fa-brands fa-linkedin about-social__icon'
-        ></a>
-        <a
-          href='https://github.com/mostafa-kheibary'
-          className='fa-brands fa-github about-social__icon'
-        ></a>
+        <a className='about-social__link' href='https://linkedin.com/in/mostafa-kheibary'>
+          <i className='fa-brands fa-linkedin about-social__icon'></i>
+        </a>
+        <a className='about-social__link' href='https://github.com/mostafa-kheibary'>
+          <i className='fa-brands fa-github about-social__icon'></i>
+        </a>
       </div>
       <div className='about-button-page'>
         <Button onClick={changePage}>back to Home</Button>
