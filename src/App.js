@@ -1,3 +1,4 @@
+import './App.css';
 import Search from './pages/Search';
 import About from './pages/About';
 import Header from './components/Header/Header';
