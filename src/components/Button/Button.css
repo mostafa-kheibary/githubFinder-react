@@ -1,0 +1,13 @@
+.button{
+  background-color: var(--light-green);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 100ms ease;
+}
+.button.dark{
+  background-color: var(--dark-green);
+}
+.button:active{
+  transform: scale(.98);
+}

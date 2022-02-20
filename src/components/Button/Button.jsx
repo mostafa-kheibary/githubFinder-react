@@ -1,10 +1,11 @@
-const Button = ({ children, width, height }) => {
+import './Button.css';
+const Button = ({ children, width, height ,dark,onClick}) => {
   const style = {
     width,
     height,
   };
   return (
-    <button className='button' style={style}>
+    <button onClick={onClick} className={`button ${dark === true && 'dark'}`} style={style}>
       {children}
     </button>
   );
