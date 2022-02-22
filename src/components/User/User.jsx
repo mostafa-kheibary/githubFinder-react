@@ -1,11 +1,13 @@
 import './User.css';
-const User = () => {
+const User = ({ name, image }) => {
   return (
     <div className='user'>
-      <div className='user__top'></div>
+      <div className='user__top'>
+        <img className='banner' src={image} alt='' />
+      </div>
       <div className='user__down'>
-        <img className='user-image' src='' alt='' />
-        <h4 className='user-name'>Mostafa Kheibary</h4>
+        <img className='user-image' src={image} alt='' />
+        <h4 className='user-name'>{name}</h4>
         <div className='user__navigate'>
           <p className='user__navigate-text'>Read More</p>
           <button className='user-button'>{'>'}</button>

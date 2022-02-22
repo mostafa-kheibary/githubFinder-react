@@ -1,5 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import './UserList.css';
+import User from '../User/User';
 const UserList = () => {
+  const [users, setUsers] = useState([]);
   const baseUrl = 'https://api.github.com';
 
   useEffect(() => {
@@ -7,11 +10,17 @@ const UserList = () => {
   }, []);
 
   const getUser = async () => {
-    const respone = await fetch(baseUrl);
+    const respone = await fetch(`${baseUrl}/users`);
     const data = await respone.json();
-    console.log(data);
+    setUsers(data);
   };
-  return <div>UserList</div>;
+  return (
+    <div className='user-list'>
+      {users.map((user) => (
+        <User key={user.id} name={user.login} image={user.avatar_url} />
+      ))}
+    </div>
+  );
 };
 
 export default UserList;
