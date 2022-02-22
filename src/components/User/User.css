@@ -1,0 +1,33 @@
+.user{
+  color: var(--white);
+  background-color: var(--lighter-dark);
+  border-radius: 5px;
+}
+.user__top{
+  background-color: var(--dark-green);
+  height: 80px;
+}
+.user-name{
+  font-size: 20px;
+}
+.user-button{
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background-color: var(--light-green);
+  color: white;
+  border: none;
+  border-radius: 50px;
+}
+.user__down{
+  padding: 20px;
+}
+.user__navigate{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.user__navigate-text{
+  font-weight: 300;
+}

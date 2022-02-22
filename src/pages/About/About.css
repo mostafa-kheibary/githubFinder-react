@@ -9,6 +9,7 @@
 }
 .about-info {
   margin-top: 15px;
+  font-weight: 300;
   color: var(--white);
 }
 .about-social {
