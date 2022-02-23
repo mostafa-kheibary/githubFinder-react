@@ -5,19 +5,22 @@ import './SearchForm.css';
 
 const SearchForm = () => {
   const [text, setText] = useState('');
-  const [active ,setActive] = useState(false);
-  const {searchUser,users} = useContext(GithubContext);
+  const { searchUser, users } = useContext(GithubContext);
   const handleText = (e) => {
     setText(e.target.value);
   };
   const handleSubmit = (e) => {
-    setActive(true)
-    searchUser(text);
-    setText('');
     e.preventDefault();
+    if (text.trim() !== '') {
+      searchUser(text);
+    }
+    setText('');
   };
   return (
-    <form onSubmit={handleSubmit} className={`search-form ${active === true && 'active'}`}>
+    <form
+      onSubmit={handleSubmit}
+      className={`search-form ${users.length > 0 === true && 'active'}`}
+    >
       <input
         placeholder='search evrybody in github'
         className='search-input'
