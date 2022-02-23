@@ -13,17 +13,23 @@ export const GithubProvider = ({ children }) => {
   const searchUser = async (search) => {
     const respone = await fetch(`${baseUrl}/search/users?q=${search}`);
     const data = await respone.json();
-    console.log(data);
     dispatch({
       type: 'SEARCH',
       payload: data.items,
     });
   };
+
+  const clearUser = ()=>{
+    dispatch({
+      type:"CLEARUSER",
+    })
+  }
   return (
     <GithubContext.Provider
       value={{
         users: state.user,
         searchUser,
+        clearUser,
       }}
     >
       {children}

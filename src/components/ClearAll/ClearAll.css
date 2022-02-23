@@ -1,0 +1,24 @@
+.clear-status {
+  padding: 0 0 0 120px;
+  margin-top: 20px;
+  text-align: left;
+}
+.clear-status button {
+  animation-name: pop;
+  animation-duration: 200ms;
+  animation-timing-function: ease;
+  animation-play-state: running;
+}
+
+.clear-status button:active {
+  transform: scale(0.98);
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}

@@ -5,6 +5,10 @@ const GithubReduser = (state, action) => {
         ...state,
         user: action.payload,
       };
+    case 'CLEARUSER':
+      return {
+        user: [],
+      };
     default:
       return state;
   }
