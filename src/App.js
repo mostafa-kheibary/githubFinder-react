@@ -1,5 +1,5 @@
 import './App.css';
-import Search from './pages/Search/Search';
+import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import NotFound from './pages/NotFound/NotFound.jsx';
 import Header from './components/Header/Header';
@@ -11,7 +11,7 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path='/' element={<Search />} />
+          <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/*' element={<NotFound />} />
         </Routes>
