@@ -1,7 +1,12 @@
 .search-form {
   position: relative;
   margin: 0 auto;
+  margin-top: 200px;
   width: fit-content;
+  transition: all 200ms ease;
+}
+.search-form.active{
+  margin-top: 50px;
 }
 .search-input{
   padding: 20px;

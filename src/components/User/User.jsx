@@ -18,3 +18,4 @@ const User = ({ name, image }) => {
 };
 
 export default User;
+ 

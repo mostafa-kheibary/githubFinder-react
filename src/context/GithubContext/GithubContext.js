@@ -10,19 +10,20 @@ export const GithubProvider = ({ children }) => {
   const [state, dispatch] = useReducer(GithubReduser, initialState);
   const baseUrl = 'https://api.github.com';
 
-  const getUser = async () => {
-    const respone = await fetch(`${baseUrl}/users`);
+  const searchUser = async (search) => {
+    const respone = await fetch(`${baseUrl}/search/users?q=${search}`);
     const data = await respone.json();
+    console.log(data);
     dispatch({
       type: 'SEARCH',
-      payload: data,
+      payload: data.items,
     });
   };
   return (
     <GithubContext.Provider
       value={{
         users: state.user,
-        getUser,
+        searchUser,
       }}
     >
       {children}

@@ -1,14 +1,9 @@
-import { useEffect } from 'react';
 import { useContext } from 'react';
 import GithubContext from '../../context/GithubContext/GithubContext';
 import './UserList.css';
 import User from '../User/User';
 const UserList = () => {
-  const { getUser, users } = useContext(GithubContext);
-
-  useEffect(() => {
-    getUser();
-  }, []);
+  const {users } = useContext(GithubContext);
 
   return (
     <div className='user-list'>
