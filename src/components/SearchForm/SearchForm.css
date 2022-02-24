@@ -1,20 +1,23 @@
-.search-form {
-  position: relative;
+.search-form-body {
   margin: 0 auto;
   margin-top: 200px;
   width: fit-content;
+  position: relative;
   transition: all 200ms ease;
-}
-.search-form.active{
+} 
+.search-form-body.active {
   margin-top: 50px;
 }
-.search-input{
+.search-form {
+  position: relative;
+}
+.search-input {
   padding: 20px;
   width: 500px;
   font-size: 18px;
   border-radius: 8px;
 }
-.search-form button{
+.search-form button {
   position: absolute;
   right: 20px;
   top: 50%;

@@ -7,7 +7,7 @@ const GithubReduser = (state, action) => {
       };
     case 'CLEARUSER':
       return {
-        user: [],
+        user: {items:[]},
       };
     default:
       return state;

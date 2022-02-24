@@ -6,7 +6,7 @@ const ClearAll = () => {
   const { clearUser, users } = useContext(GithubContext);
   return (
     <div className='clear-status'>
-      {users.length >0 && <Button onClick={clearUser}>ClearAll</Button>}
+      {users.items.length > 0 && <Button onClick={clearUser}>ClearAll</Button>}
     </div>
   );
 };

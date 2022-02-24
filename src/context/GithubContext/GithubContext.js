@@ -1,10 +1,10 @@
 import { createContext, useReducer } from 'react';
-import GithubReduser from './GithubReduser';
+import GithubReduser from './GithubReducer';
 const GithubContext = createContext();
 
 export const GithubProvider = ({ children }) => {
   const initialState = {
-    user: [],
+    user: { items: [] },
   };
 
   const [state, dispatch] = useReducer(GithubReduser, initialState);
@@ -15,15 +15,15 @@ export const GithubProvider = ({ children }) => {
     const data = await respone.json();
     dispatch({
       type: 'SEARCH',
-      payload: data.items,
+      payload: data,
     });
   };
 
-  const clearUser = ()=>{
+  const clearUser = () => {
     dispatch({
-      type:"CLEARUSER",
-    })
-  }
+      type: 'CLEARUSER',
+    });
+  };
   return (
     <GithubContext.Provider
       value={{
