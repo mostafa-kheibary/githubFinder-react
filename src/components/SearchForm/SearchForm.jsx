@@ -36,9 +36,11 @@ const SearchForm = () => {
           type='text'
           onChange={handleText}
         />
+        <div className="button-container">
         <Button height={45} width={140} dark={true}>
           Search
         </Button>
+        </div>
       </form>
     </div>
   );

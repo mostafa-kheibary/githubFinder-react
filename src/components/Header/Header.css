@@ -13,6 +13,3 @@
 .header-logo{
   font-size: 40px;
 }
-.header button:active{
-  transform: scale(.98);
-}

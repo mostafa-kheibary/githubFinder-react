@@ -27,6 +27,3 @@
 .about-button-page button {
   margin-top: 15px;
 }
-.about-button-page button:active {
-  transform: scale(0.98);
-}

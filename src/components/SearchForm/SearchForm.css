@@ -4,7 +4,7 @@
   width: fit-content;
   position: relative;
   transition: all 200ms ease;
-} 
+}
 .search-form-body.active {
   margin-top: 50px;
 }
@@ -17,7 +17,7 @@
   font-size: 18px;
   border-radius: 8px;
 }
-.search-form button {
+.button-container {
   position: absolute;
   right: 20px;
   top: 50%;
