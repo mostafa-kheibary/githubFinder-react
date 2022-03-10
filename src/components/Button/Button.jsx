@@ -1,6 +1,6 @@
 import './Button.css';
 import { motion } from 'framer-motion';
-const Button = ({ children, width, height, dark, onClick }) => {
+const Button = ({ children, width, height, mode, onClick }) => {
   const style = {
     width,
     height,
@@ -9,7 +9,7 @@ const Button = ({ children, width, height, dark, onClick }) => {
     <motion.button
       whileTap={{ scale: 0.9 }}
       onClick={onClick}
-      className={`button ${dark === true && 'dark'}`}
+      className={`button ${mode ? mode : ''}`}
       style={style}
     >
       {children}
@@ -17,6 +17,7 @@ const Button = ({ children, width, height, dark, onClick }) => {
   );
 };
 Button.defaultProps = {
+  mode :null,
   width: 120,
   height: 40,
 };

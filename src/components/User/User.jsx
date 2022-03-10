@@ -1,4 +1,5 @@
 import './User.css';
+import { Link } from 'react-router-dom';
 const User = ({ name, image }) => {
   return (
     <div className='user'>
@@ -10,7 +11,9 @@ const User = ({ name, image }) => {
         <h4 className='user-name'>{name}</h4>
         <div className='user__navigate'>
           <p className='user__navigate-text'>Read More</p>
-          <button className='user-button'>{'>'}</button>
+          <Link className='user-button' to={`user/${name}`}>
+            {'>'}
+          </Link>
         </div>
       </div>
     </div>
@@ -18,4 +21,3 @@ const User = ({ name, image }) => {
 };
 
 export default User;
- 

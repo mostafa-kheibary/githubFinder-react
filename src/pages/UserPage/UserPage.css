@@ -1,0 +1,84 @@
+.user-page__container {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 20px 20px 0 20px;
+  color: white;
+}
+.user-page__back-home {
+  text-decoration: none;
+  color: white;
+  padding: 0 25px 0 25px;
+  font-size: 15px;
+  font-weight: 300;
+}
+.user-page__container-info {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.user-page__image {
+  width: 300px;
+  position: relative;
+}
+.user-page__image-img {
+  border-radius: 15px;
+  width: 300px;
+}
+.user-page__type {
+  position: absolute;
+  padding: 5px 10px 5px 10px;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(11, 85, 11, 0.5);
+  border-radius: 50px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  color: rgb(21, 209, 21);
+}
+.user-page__user-info__name {
+  font-size: 30px;
+}
+.user-page__user-info__bio {
+  font-weight: 300;
+}
+.user-page__user-info button {
+  margin-top: 25px;
+}
+.user-page__links {
+  margin-top: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.178);
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+.user-page__links-lable {
+  font-size: 12px;
+  font-weight: 300;
+}
+.user-page__user-info {
+  width: 100%;
+}
+.user-page__fallower-info {
+  padding: 25px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.user-page__fallower-info__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.user-page__fallower-info i {
+  font-size: 40px;
+  color: var(--light-green);
+}
+.fallower-info__content-span {
+  font-size: 12px;
+  font-weight: 300;
+}
+.fallower-info__content-number {
+  font-size: 30px;
+}

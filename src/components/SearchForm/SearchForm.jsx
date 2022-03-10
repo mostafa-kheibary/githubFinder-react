@@ -7,7 +7,7 @@ import './SearchForm.css';
 
 const SearchForm = () => {
   const [text, setText] = useState('');
-  const { searchUser, users } = useContext(GithubContext);
+  const { searchUser, searchResualt } = useContext(GithubContext);
   const { showAlert } = useContext(AlerContext);
   const handleText = (e) => {
     setText(e.target.value);
@@ -24,7 +24,7 @@ const SearchForm = () => {
   return (
     <div
       className={`search-form-body ${
-        users.items.length > 0 === true && 'active'
+        searchResualt.items.length > 0 && 'active'
       }`}
     >
       <Alert />
@@ -36,10 +36,10 @@ const SearchForm = () => {
           type='text'
           onChange={handleText}
         />
-        <div className="button-container">
-        <Button height={45} width={140} dark={true}>
-          Search
-        </Button>
+        <div className='button-container'>
+          <Button height={45} width={140} mode={'dark'}>
+            Search
+          </Button>
         </div>
       </form>
     </div>

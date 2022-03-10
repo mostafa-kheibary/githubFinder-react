@@ -3,11 +3,17 @@ const GithubReduser = (state, action) => {
     case 'SEARCH':
       return {
         ...state,
-        user: action.payload,
+        searchResualt: action.payload,
       };
     case 'CLEARUSER':
       return {
-        user: {items:[]},
+        ...state,
+        searchResualt: { items: [] },
+      };
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.payload,
       };
     default:
       return state;

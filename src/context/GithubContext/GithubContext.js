@@ -4,7 +4,8 @@ const GithubContext = createContext();
 
 export const GithubProvider = ({ children }) => {
   const initialState = {
-    user: { items: [] },
+    searchResualt: { items: [] },
+    user: {},
   };
 
   const [state, dispatch] = useReducer(GithubReduser, initialState);
@@ -19,6 +20,15 @@ export const GithubProvider = ({ children }) => {
     });
   };
 
+  const getUser = async (userName) => {
+    const respone = await fetch(`${baseUrl}/users/${userName}`);
+    const data = await respone.json();
+    console.log(data);
+    dispatch({
+      type: 'SET_USER',
+      payload: data,
+    });
+  };
   const clearUser = () => {
     dispatch({
       type: 'CLEARUSER',
@@ -27,9 +37,11 @@ export const GithubProvider = ({ children }) => {
   return (
     <GithubContext.Provider
       value={{
-        users: state.user,
+        searchResualt: state.searchResualt,
         searchUser,
         clearUser,
+        getUser,
+        user: state.user,
       }}
     >
       {children}

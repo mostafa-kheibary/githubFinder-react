@@ -9,3 +9,8 @@
 .button.dark{
   background-color: var(--dark-green);
 }
+.button.trans{
+  background-color: transparent;
+  color: white;
+  border:2px white solid;
+}
