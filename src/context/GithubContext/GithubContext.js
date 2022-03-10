@@ -6,23 +6,33 @@ export const GithubProvider = ({ children }) => {
   const initialState = {
     searchResualt: { items: [] },
     user: {},
+    loader: false,
   };
 
   const [state, dispatch] = useReducer(GithubReduser, initialState);
   const baseUrl = 'https://api.github.com';
 
   const searchUser = async (search) => {
+    setLoader();
     const respone = await fetch(`${baseUrl}/search/users?q=${search}`);
     const data = await respone.json();
+    setLoader();
     dispatch({
       type: 'SEARCH',
       payload: data,
     });
   };
 
+  const setLoader = () => {
+    dispatch({
+      type: 'SET_LOADER',
+    });
+  };
   const getUser = async (userName) => {
+    setLoader();
     const respone = await fetch(`${baseUrl}/users/${userName}`);
     const data = await respone.json();
+    setLoader();
     console.log(data);
     dispatch({
       type: 'SET_USER',
@@ -42,6 +52,7 @@ export const GithubProvider = ({ children }) => {
         clearUser,
         getUser,
         user: state.user,
+        loader: state.loader,
       }}
     >
       {children}

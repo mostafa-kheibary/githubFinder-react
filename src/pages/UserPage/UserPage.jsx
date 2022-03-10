@@ -1,11 +1,11 @@
 import Button from '../../components/Button/Button';
 import { useEffect, useContext } from 'react/cjs/react.development';
 import GithubContext from '../../context/GithubContext/GithubContext';
-import { useParams,Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import './UserPage.css';
 const UserPage = () => {
-  const { getUser, user } = useContext(GithubContext);
+  const { getUser, user, loader } = useContext(GithubContext);
   const params = useParams();
   useEffect(() => {
     getUser(params.userName);
@@ -14,11 +14,8 @@ const UserPage = () => {
   const goToGitHub = (url) => {
     window.location.replace(url);
   };
-  return (
-    <>
-    
-   
-      <Link className='user-page__back-home' to='/'>back to Home</Link>
+
+  const renderdUser = (
     <div className='user-page__container'>
       <div className='user-page__container-info'>
         <div className='user-page__image'>
@@ -74,8 +71,12 @@ const UserPage = () => {
 
         <div className='user-page__fallower-info__content'>
           <div>
-            <span className='fallower-info__content-span'>public repository</span>
-            <h4 className='fallower-info__content-number'>{user.public_repos}</h4>
+            <span className='fallower-info__content-span'>
+              public repository
+            </span>
+            <h4 className='fallower-info__content-number'>
+              {user.public_repos}
+            </h4>
           </div>
           <div className='icon'>
             <i className='fa-solid fa-file-code'></i>
@@ -85,7 +86,9 @@ const UserPage = () => {
         <div className='user-page__fallower-info__content'>
           <div>
             <span className='fallower-info__content-span'>Gists</span>
-            <h4 className='fallower-info__content-number'>{user.public_gists}</h4>
+            <h4 className='fallower-info__content-number'>
+              {user.public_gists}
+            </h4>
           </div>
           <div className='icon'>
             <i className='fa-solid fa-shop'></i>
@@ -93,7 +96,14 @@ const UserPage = () => {
         </div>
       </div>
     </div>
- </>
+  );
+  return (
+    <>
+      <Link className='user-page__back-home' to='/'>
+        back to Home
+      </Link>
+      {loader === true ? 'loading ...' : renderdUser}
+    </>
   );
 };
 
