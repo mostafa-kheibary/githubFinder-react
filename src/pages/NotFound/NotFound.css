@@ -1,4 +1,4 @@
-.not-found{
+.not-found {
   margin-top: 20px;
   color: var(--white);
   text-align: center;
@@ -7,24 +7,33 @@
   align-items: center;
   gap: 100px;
 }
-.not-found__status-code{
+.not-found__status-code {
   font-size: 90px;
 }
 
-.not-found__title{
+.not-found__title {
   font-weight: 300;
   margin-top: -30px;
   letter-spacing: 5px;
 }
-.not-found-img{
+.not-found-img {
   user-select: none;
   pointer-events: none;
   width: 400px;
 }
-.not-found button:active{
-  transform: scale(.98);
+.not-found button:active {
+  transform: scale(0.98);
 }
 
-.not-found button{
+.not-found button {
   margin-top: 20px;
+}
+@media screen and (max-width: 830px) {
+  .not-found {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+  .not-found-img {
+    width: 200px !important;
+  }
 }
