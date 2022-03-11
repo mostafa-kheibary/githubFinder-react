@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect, useContext } from 'react/cjs/react.development';
+import { useEffect, useContext } from 'react';
 import GithubContext from '../../context/GithubContext/GithubContext';
 import { getUser } from '../../context/Actions/Actions';
 import RepoList from '../../components/RepoList/RepoList';
