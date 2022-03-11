@@ -13,7 +13,7 @@ const UserList = () => {
   return (
     <div className='user-list'>
       {loader === true ? <Loader /> : renderdList}
-      {searchResualt.total_count === 0 && <h1>not found</h1>}
+      {searchResualt.total_count === 0 && <h4 className='no-resault'>noting found</h4>}
     </div>
   );
 };
