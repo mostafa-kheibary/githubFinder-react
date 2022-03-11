@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import GithubContext from '../../context/GithubContext/GithubContext';
+import Loader from '../../components/Loader/Loader';
 import './UserList.css';
 import User from '../User/User';
 const UserList = () => {
@@ -11,7 +12,7 @@ const UserList = () => {
 
   return (
     <div className='user-list'>
-      {loader === true ? 'loading ... ' : renderdList}
+      {loader === true ? <Loader /> : renderdList}
       {searchResualt.total_count === 0 && <h1>not found</h1>}
     </div>
   );

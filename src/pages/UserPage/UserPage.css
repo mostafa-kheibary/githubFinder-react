@@ -1,5 +1,6 @@
 .user-page__container {
   margin: 0 auto;
+  margin-top: 20px;
   max-width: 1280px;
   padding: 20px 20px 0 20px;
   color: white;
@@ -7,9 +8,14 @@
 .user-page__back-home {
   text-decoration: none;
   color: white;
-  padding: 0 25px 0 25px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 50px;
+  margin-left: 25px;
   font-size: 15px;
   font-weight: 300;
+}
+.user-page__back-home:hover{
+  background-color: rgba(255, 255, 255, 0.11);
 }
 .user-page__container-info {
   display: flex;
@@ -81,4 +87,45 @@
 }
 .fallower-info__content-number {
   font-size: 30px;
+}
+
+@media screen and (max-width:900px){
+  .user-page__container-info{
+    flex-direction: column;
+    text-align: center;
+  }
+  .user-page__image{
+    margin: 0 auto;
+  }
+  .user-page__links{
+    text-align: left;
+  }
+}
+
+@media screen and (max-width:750px){
+  .user-page__links{
+    flex-direction: column;
+    gap: 20px;
+  }
+ 
+  .user-page__fallower-info{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 50px;
+  }
+  .user-page__fallower-info__content{
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width:400px){
+  .user-page__fallower-info{
+    grid-template-columns: repeat(1,1fr);
+  }
+  .user-page__fallower-info__content{
+    justify-content: space-between;
+  }
+  .user-page__image,.user-page__image-img{
+    width: 100%;
+  }
 }

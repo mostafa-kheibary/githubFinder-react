@@ -1,0 +1,18 @@
+.repo-list {
+  padding: 20px;
+}
+.repo-list__wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+@media screen and (max-width:600px){
+  .repo-list__wrapper{
+    padding: 20px 0 0 0 ;
+  }
+  .repo-list{
+    padding: 10px;
+  }
+}

@@ -1,14 +1,25 @@
-import Button from '../../components/Button/Button';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect, useContext } from 'react/cjs/react.development';
 import GithubContext from '../../context/GithubContext/GithubContext';
-import { useParams, Link } from 'react-router-dom';
-
+import { getUser } from '../../context/Actions/Actions';
+import RepoList from '../../components/RepoList/RepoList';
+import Button from '../../components/Button/Button';
+import Loader from '../../components/Loader/Loader';
 import './UserPage.css';
+
 const UserPage = () => {
-  const { getUser, user, loader } = useContext(GithubContext);
+  const { dispatch, user, loader } = useContext(GithubContext);
   const params = useParams();
+
   useEffect(() => {
-    getUser(params.userName);
+    const handleGetUser = async () => {
+      dispatch({ type: 'SET_LOADER' });
+      const data = await getUser(params.userName);
+      dispatch({ type: 'SET_USER', payload: data.user });
+      dispatch({ type: 'SET_REPO', payload: data.repo });
+      dispatch({ type: 'SET_LOADER' });
+    };
+    handleGetUser();
   }, [params.userName]);
 
   const goToGitHub = (url) => {
@@ -35,11 +46,11 @@ const UserPage = () => {
           <div className='user-page__links'>
             <div>
               <span className='user-page__links-lable'>Location :</span>
-              <h4>{user.location}</h4>
+              <h4>{user.location ? user.location : 'internet'}</h4>
             </div>
             <div>
               <span className='user-page__links-lable'>blog :</span>
-              <h4>{user.blog}</h4>
+              <h4>{user.blog ? user.blog : 'none'}</h4>
             </div>
             <div>
               <span className='user-page__links-lable'>twitter :</span>
@@ -95,6 +106,7 @@ const UserPage = () => {
           </div>
         </div>
       </div>
+      <RepoList />
     </div>
   );
   return (
@@ -102,7 +114,7 @@ const UserPage = () => {
       <Link className='user-page__back-home' to='/'>
         back to Home
       </Link>
-      {loader === true ? 'loading ...' : renderdUser}
+      {loader === true ? <Loader /> : renderdUser}
     </>
   );
 };

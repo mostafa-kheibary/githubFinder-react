@@ -1,0 +1,76 @@
+.repo-item {
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.068);
+  border-radius: 10px;
+  transition: all 100ms ease;
+  position: relative;
+}
+.repo-item:hover {
+  background-color: rgba(0, 0, 0, 0.158);
+}
+.repo-item__info {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+}
+.repo-item__info-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: auto;
+  padding: 5px 10px 5px 10px;
+  font-size: 12px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.363);
+}
+.repo-item-name{
+  text-decoration: none;
+  color: white ;
+  font-size: 20px;
+}
+.repo-item-description{
+  font-size: 15px;
+  margin-top: 10px;
+  font-weight: 300;
+}
+.repo-item-language{
+  position: absolute;
+  font-size: 12px;
+  font-weight: 300;
+  padding: 4px 10px 4px 10px;
+  background-color: rgba(255, 255, 255, 0.055);
+  border-radius: 50px;
+  right: 20px;
+  bottom: 20px;
+}
+.repo-item__info-tag.star{
+  color: rgb(255, 255, 100);
+  background-color: rgba(255, 255, 0, 0.171);
+}
+.repo-item__info-tag.fork{
+  color: rgb(157, 217, 255);
+  background-color: rgba(135, 206, 250, 0.178);
+}
+.repo-item__info-tag.watcher{
+  color: rgb(126, 255, 126);
+  background-color: rgba(0, 128, 0, 0.151);
+}
+.repo-item__info-tag.issus{
+  color: rgb(255, 104, 104);
+  background-color: rgba(255, 0, 0, 0.158);
+}
+@media screen and (max-width:450px){
+  .repo-item-language{
+    top: 20px;
+    bottom: unset;
+  }
+}
+@media screen and (max-width:350px){
+  .repo-item-language{
+    display: none;
+  }
+  .repo-item__info{
+    flex-wrap: wrap;
+  }
+}

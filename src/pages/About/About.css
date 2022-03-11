@@ -27,3 +27,23 @@
 .about-button-page button {
   margin-top: 15px;
 }
+@media screen and (max-width: 800px) {
+  .about-container {
+    padding: 50px 50px 0 50px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .about-title{
+    font-size: 25px;
+  }
+  .about-author{
+    font-size: 12px;
+  }
+  .about-info{
+    font-size: 14px;
+  }
+  .about-container{
+    padding: 30px;
+  }
+}

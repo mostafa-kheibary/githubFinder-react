@@ -6,3 +6,20 @@
   margin: 0 auto;
   margin-top: 50px;
 }
+@media screen and (max-width: 1280px) {
+  .user-list {
+    padding: 25px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 800px) {
+  .user-list {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .user-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

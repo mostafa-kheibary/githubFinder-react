@@ -8,7 +8,7 @@ import { GithubProvider } from './context/GithubContext/GithubContext';
 import { AlertContextProvider } from './context/AlertContext/AlertContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-const App = () => { 
+const App = () => {
   return (
     <AlertContextProvider>
       <GithubProvider>
