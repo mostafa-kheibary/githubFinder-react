@@ -5,7 +5,7 @@ import AlertContext from '../../context/AlertContext/AlertContext';
 const Alert = () => {
   const { alert } = useContext(AlertContext);
   return (
-    <>
+    <div className='alert-container'>
       {alert && (
         <motion.div
           initial={{ y: '20px' }}
@@ -16,7 +16,7 @@ const Alert = () => {
           <h4 className='alert-text'>{alert.msg}</h4>
         </motion.div>
       )}
-    </>
+    </div>
   );
 };
 

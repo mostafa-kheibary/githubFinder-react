@@ -13,8 +13,8 @@ const RepoList = () => {
       return b.stargazers_count - a.stargazers_count;
     });
     setSortedRepos(sort);
-  }, []);
-  console.log(repos);
+  },[repos]);
+
   return (
     <div className='repo-list'>
       <h4>Latest Repository</h4>

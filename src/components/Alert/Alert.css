@@ -1,5 +1,4 @@
 .alert {
-  position: absolute;
   left: 0;
   top: -40px;
   opacity: 0.9;
@@ -19,4 +18,12 @@
 }
 .alert-text {
   font-weight: 300;
+}
+
+@media screen and (max-width: 550px) {
+  .alert {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
 }
